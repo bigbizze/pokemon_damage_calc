@@ -73,7 +73,7 @@ function dmg_calc(moveName, atkMon, defMon = null, _) {
 		'contentType': 'application/json',
 		'payload': JSON.stringify(body)
 	};
-	var response = UrlFetchApp.fetch('http://<some-port>:3000/calc', options);
+	var response = UrlFetchApp.fetch('http://<some-host>:3000/calc', options);
 	var text_res = response.getContentText();
 	return text_res;
 }
