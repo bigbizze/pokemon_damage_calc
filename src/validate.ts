@@ -13,7 +13,7 @@ export const check_req_input = (body?: PokemonRequest, optional = false): Some<P
         body.boosts,
         body.ivs,
         body.evs
-    ).some(x => valid_stat_types.includes(x[0]) || typeof x[1] !== "number");
+    ).some(x => !valid_stat_types.includes(x[0]) || typeof x[1] !== "number");
     let invalid_inputs = [
         body.name == null && "You didn't provide a name!",
         invalid_stats && "incorrect boost, ivs or evs!"
